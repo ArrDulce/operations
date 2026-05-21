@@ -1,7 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 
-class OperationsController extends Controller
+class PromedioController extends Controller
 {
     public function average(
         float $a,
