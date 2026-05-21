@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 class PromedioController extends Controller
