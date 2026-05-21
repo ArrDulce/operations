@@ -1,5 +1,5 @@
 <?php
-class ExampleTest extends TestCase
+class PromedioTest extends TestCase
 {
     /**
      * Prueba del promedio con números variados.
