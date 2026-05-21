@@ -9,7 +9,7 @@ class PromedioTest extends TestCase
      */
     public function test_average_result_varied_numbers(): void
     {
-        $controller = new OperationsController;
+        $controller = new PromedioController;
 
         $result = $controller->average(
             a: 10,
