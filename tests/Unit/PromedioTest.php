@@ -1,4 +1,7 @@
 <?php
+namespace Tests\Unit;
+use App\Http\Controllers\PromedioController;
+use PHPUnit\Framework\TestCase;
 class PromedioTest extends TestCase
 {
     /**
