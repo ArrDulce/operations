@@ -8,9 +8,4 @@ class ConversionUtilityController extends Controller
     {
         return ($c * 9 / 5) + 32;
     }
-
-    public function mbToGb(float $mb): float
-    {
-        return $mb / 1024;
-    }
 }

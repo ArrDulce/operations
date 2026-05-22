@@ -15,13 +15,4 @@ class ConversionUtilityTest extends TestCase
 
         $this->assertEquals(32, $result);
     }
-
-    public function test_megabytes_to_gigabytes()
-    {
-        $controller = new ConversionUtilityController;
-
-        $result = $controller->mbToGb(1024); // 1024 MB = 1 GB
-
-        $this->assertEquals(1, $result);
-    }
 }
