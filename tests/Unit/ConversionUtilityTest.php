@@ -13,6 +13,6 @@ class ConversionUtilityTest extends TestCase
 
         $result = $controller->cToF(0); // 0°C = 32°F
 
-        $this->assertEquals(33, $result);
+        $this->assertEquals(32, $result);
     }
 }
