@@ -9,3 +9,4 @@ class ConversionUtilityController extends Controller
         return ($c * 9 / 5) + 32;
     }
 }
+
