@@ -16,4 +16,3 @@ class ConversionUtilityTest extends TestCase
         $this->assertEquals(32, $result);
     }
 }
-
