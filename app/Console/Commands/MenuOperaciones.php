@@ -2,7 +2,6 @@
 
 namespace App\Console\Commands;
 
-use Illuminate\Console\Command;
 use App\Http\Controllers\ConversionUtilityController;
 use App\Http\Controllers\ExponenteController;
 use App\Http\Controllers\GenerateHashController;
@@ -10,10 +9,12 @@ use App\Http\Controllers\McdMcmController;
 use App\Http\Controllers\OperationsController;
 use App\Http\Controllers\PitagorasController;
 use App\Http\Controllers\PromedioController;
+use Illuminate\Console\Command;
 
 class MenuOperaciones extends Command
 {
     protected $signature = 'app:menu-operaciones';
+
     protected $description = 'Menú interactivo para ejecutar las operaciones del sistema';
 
     public function handle()
@@ -36,7 +37,7 @@ class MenuOperaciones extends Command
                     '5' => 'Generar Hash SHA256',
                     '6' => 'Calcular MCD y MCM',
                     '7' => 'Promedio de 6 números',
-                    '8' => 'Salir'
+                    '8' => 'Salir',
                 ],
                 '8'
             );
@@ -80,7 +81,7 @@ class MenuOperaciones extends Command
         $b = $this->ask('Ingresa el segundo número entero');
 
         $controller = app(OperationsController::class);
-        $resultado = $controller->addition((int)$a, (int)$b);
+        $resultado = $controller->addition((int) $a, (int) $b);
 
         $this->info("Resultado: La suma es {$resultado}");
     }
@@ -92,7 +93,7 @@ class MenuOperaciones extends Command
         $catetoB = $this->ask('Ingresa el valor del cateto B');
 
         $controller = app(PitagorasController::class);
-        $hipotenusa = $controller->calcularHipotenusa((float)$catetoA, (float)$catetoB);
+        $hipotenusa = $controller->calcularHipotenusa((float) $catetoA, (float) $catetoB);
 
         $this->info("Resultado: La hipotenusa es {$hipotenusa}");
     }
@@ -104,7 +105,7 @@ class MenuOperaciones extends Command
         $exponente = $this->ask('Ingresa el exponente');
 
         $controller = app(ExponenteController::class);
-        $resultado = $controller->calcularPotencia((float)$base, (float)$exponente);
+        $resultado = $controller->calcularPotencia((float) $base, (float) $exponente);
 
         $this->info("Resultado: {$base} elevado a la {$exponente} es {$resultado}");
     }
@@ -115,7 +116,7 @@ class MenuOperaciones extends Command
         $celsius = $this->ask('Ingresa los grados Celsius');
 
         $controller = app(ConversionUtilityController::class);
-        $fahrenheit = $controller->cToF((float)$celsius);
+        $fahrenheit = $controller->cToF((float) $celsius);
 
         $this->info("Resultado: {$celsius}°C equivalen a {$fahrenheit}°F");
     }
@@ -126,9 +127,9 @@ class MenuOperaciones extends Command
         $texto = $this->ask('Ingresa el texto a encriptar');
 
         $controller = app(GenerateHashController::class);
-        $hash = $controller->generateHash((string)$texto);
+        $hash = $controller->generateHash((string) $texto);
 
-        $this->info("Hash generado:");
+        $this->info('Hash generado:');
         $this->line($hash);
     }
 
@@ -139,7 +140,7 @@ class MenuOperaciones extends Command
         $b = $this->ask('Ingresa el segundo número entero');
 
         $controller = app(McdMcmController::class);
-        $resultado = $controller->calcularMCDyMCM((int)$a, (int)$b);
+        $resultado = $controller->calcularMCDyMCM((int) $a, (int) $b);
 
         if (isset($resultado['error'])) {
             $this->error($resultado['error']);
@@ -159,7 +160,7 @@ class MenuOperaciones extends Command
         $f = $this->ask('Número 6');
 
         $controller = app(PromedioController::class);
-        $promedio = $controller->average((float)$a, (float)$b, (float)$c, (float)$d, (float)$e, (float)$f);
+        $promedio = $controller->average((float) $a, (float) $b, (float) $c, (float) $d, (float) $e, (float) $f);
 
         $this->info("Resultado: El promedio es {$promedio}");
     }
