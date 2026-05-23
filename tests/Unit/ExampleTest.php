@@ -25,6 +25,6 @@ class ExampleTest extends TestCase
 
         // Comprobamos el resultado esperado
         $this->assertEquals(13, $result);
-        $this->assertGreaterThan(4, $result);
+        $this->assertGreaterThan(0, $result);
     }
 }
