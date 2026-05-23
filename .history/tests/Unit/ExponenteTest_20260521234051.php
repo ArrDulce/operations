@@ -11,10 +11,10 @@ class ExponenteTest extends TestCase
     {
         $controller = new ExponenteController;
 
-        $result = $controller->calcularPotencia(5.0, 3.0);
+        $result = $controller->calcularPotencia(2.0, 3.0);
 
         $this->assertIsFloat($result);
         $this->assertNotNull($result);
-        $this->assertEquals(125.0, $result);
+        $this->assertEquals(8.0, $result);
     }
 }
