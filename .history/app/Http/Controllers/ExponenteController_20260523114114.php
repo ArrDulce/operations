@@ -6,6 +6,6 @@ class ExponenteController extends Controller
 {
     public function calcularPotencia(float $base, float $exponente): float
     {
-        return pow($base, $exponente);
+        return pow($base, $exponent);
     }
 }
