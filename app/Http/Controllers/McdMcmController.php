@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+
 class McdMcmController extends Controller
 {
     /**
@@ -103,5 +105,31 @@ class McdMcmController extends Controller
         $mcm = ($absA * $absB) / $mcd;
 
         return ['mcd' => $mcd, 'mcm' => $mcm, 'input_a' => $a, 'input_b' => $b];
+    }
+
+    public function mostrarVista()
+    {
+        return view('mcd-mcm');
+    }
+
+    public function procesarMcdMcm(Request $request)
+    {
+        $num1 = $request->input('numero1');
+        $num2 = $request->input('numero2');
+
+        $resultado = $this->calcularMCDyMCM((int) $num1, (int) $num2);
+
+        if (isset($resultado['error'])) {
+            $mcd = $resultado['error'];
+            $mcm = $resultado['error'];
+        } else {
+            $mcd = $resultado['mcd'];
+            $mcm = $resultado['mcm'];
+        }
+
+        return view('mcd-mcm', [
+            'mcd' => $mcd,
+            'mcm' => $mcm,
+        ]);
     }
 }
