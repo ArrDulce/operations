@@ -15,6 +15,6 @@ class ExponenteTest extends TestCase
 
         $this->assertIsFloat($result);
         $this->assertNotNull($result);
-        $this->assertEquals(120.0, $result);
+        $this->assertEquals(125.0, $result);
     }
 }
